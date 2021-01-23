@@ -1,5 +1,6 @@
 //object
 const deck = document.querySelectorAll('.deck');
+const text = document.querySelectorAll('.text');
 
 //position start
 let pos = 0;
@@ -20,5 +21,9 @@ function left() {
 
 //apply function
 
-setInterval(left, 1);
+setInterval(left, 7.5);
+
+//visual flare
+
+setInterval(blink, 100);
 

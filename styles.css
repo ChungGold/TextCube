@@ -8,14 +8,7 @@
 }
 
 body {
-    background-color: black;
-    animation: bgChange 10s linear normal 1;
-}
-
-img, video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    background-color:black;
 }
 
 /* FIELD */
@@ -32,12 +25,12 @@ img, video {
 #cube {
     position: relative;
     transform-style: preserve-3d;
-    animation: cubeAnimate 30s infinite normal linear;
+    animation: cubeAnimate 20s infinite normal linear;
 }
 
 @keyframes cubeAnimate {
     0% {
-        transform: rotate3d(0, 1, 0, -360deg);
+        transform: rotate3d(1, 1, 0, -360deg);
     }
     100% {
         transform: rotate3d(0, 0, 0, 0);
@@ -56,7 +49,7 @@ img, video {
     background-color:black;
     border-color: grey;
     border-width: 3px;
-    /* opacity: 50%; */
+    animation: reveal 15s linear 1 normal;
 }
 
 .deck {
@@ -84,96 +77,73 @@ img, video {
 }
 
 #six {
-    transform: translateY(300px) rotateX(90deg);
+    transform: translateY(300px) rotateX(-90deg);
 }
 
 
 /* TEXT CONTENT */
 
 .text {
-    color:grey;
+    color: white;
     font-size: 100px;
+    /* font-weight: 100; */
     letter-spacing: 30px;
-    /* animation: glitch 10s linear 1 normal;
-    clip: rect(10px, 0px, auto, auto); */
+    text-shadow: 
+        2px 1px magenta,
+        1px -2px cyan;
 }
 
 @keyframes glitch {
-0% {
-    clip: rect(auto, auto, auto, auto);
-}
-49% {
-    clip: rect(auto, auto, auto, auto);
-}
-50% {
-    clip: rect(10px, 800px, auto, auto);
-}   
-60% {
-    clip: rect(10px, 600px, auto, auto);
-}
-70% {
-    clip: rect(10px, 400px, auto, auto);
-}
-80% {
-    clip: rect(10px, 200px, auto, auto);
-}
-90% {
-    clip: rect(10px, 0px, auto, auto);
-}
-100% {
-    clip: rect(10px, 0px, auto, auto);
-}
+    0% {
+        text-shadow: 
+        2px 1px magenta,
+        1px -2px cyan;
+    }
+    9% {
+        text-shadow: 
+        2px 1px magenta,
+        1px -2px cyan;
+    }
+    10% {
+        text-shadow: 
+        1px -2px magenta,
+        1px 2px cyan;
+    }
+    49% {
+        text-shadow: 
+        1px -2px magenta,
+        1px 2px cyan;
+    }
+    50% {
+        text-shadow: 
+        2px 1px magenta,
+        -2px -1px cyan;
+    }
+    99% {
+        text-shadow: 
+        2px 1px magenta,
+        -2px -1px cyan;
+    }
+    100% {
+        text-shadow: 
+        2px 2px magenta,
+        -2px -2px cyan;
+    }
 }
 
-/* .text:before, .text:after {
-    position: absolute;
-    content: attr(data-text);
-    color: black;
-}
-
-.text:before{
-    left: 4px;
-    text-shadow: 4px 0 cyan;
-    animation: reveal 10s linear 1 normal;
-}
-.text:after{
-    left: -4px;
-    text-shadow: -4px 0 magenta;
-    animation: reveal 10s linear 1 normal;
-} */
+/* animations */
 
 @keyframes reveal {
     0% {
-        clip: rect(110px, auto, auto, auto);
-    }
-    10% {
-        clip: rect(85px, auto, auto, auto);
-    }
-    20% {
-        clip: rect(60px, auto, auto, auto);
-    }
-    30% {
-        clip: rect(35px, auto, auto, auto);
-    }
-    40% {
-        clip: rect(10px, auto, auto, auto);
-    }
-    50% {
-        clip: rect(10px, 800px, auto, auto);
-    }   
-    60% {
-        clip: rect(10px, 600px, auto, auto);
+        clip: rect(0px, auto, 120px, auto);
     }
     70% {
-        clip: rect(10px, 400px, auto, auto);
+        clip: rect(600px, auto, 720px, auto);
     }
-    80% {
-        clip: rect(10px, 200px, auto, auto);
-    }
-    90% {
-        clip: rect(10px, 0px, auto, auto);
+    71% {
+        clip: rect(600px, auto, auto, auto);
     }
     100% {
-        clip: rect(10px, 0px, auto, auto);
+        clip: rect(0px, auto, auto, auto);
     }
 }
